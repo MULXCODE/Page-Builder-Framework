@@ -174,7 +174,6 @@ var kirkiPostMessage = {
 						} );
 					}
 					break;
-				case 'kirki-background':
 				case 'kirki-dimensions':
 				case 'kirki-multicolor':
 				case 'kirki-sortable':

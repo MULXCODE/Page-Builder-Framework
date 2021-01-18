@@ -153,7 +153,6 @@ final class Kirki_Modules_CSS_Generator {
 		// Find the class that will handle the outpout for this field.
 		$classname            = 'Kirki_Output';
 		$default_classnames   = array(
-			'kirki-background' => 'Kirki_Output_Field_Background',
 			'kirki-dimensions' => 'Kirki_Output_Field_Dimensions',
 			'kirki-image'      => 'Kirki_Output_Field_Image',
 			'kirki-typography' => 'Kirki_Output_Field_Typography',
