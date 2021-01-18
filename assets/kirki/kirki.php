@@ -75,8 +75,13 @@ new Kirki_L10n();
 // Include the ariColor library.
 require_once wp_normalize_path( dirname( __FILE__ ) . '/lib/class-aricolor.php' ); // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude
 
-// Add an empty config for global fields.
-Kirki::add_config( '' );
+// Kirki configuration.
+Kirki::add_config( 'wpbf', array(
+    'capability'        => 'edit_theme_options',
+    'option_type'       => 'theme_mod',
+    'gutenberg_support' => true,
+    'disable_output'    => true,
+) );
 
 $custom_config_path = dirname( __FILE__ ) . '/custom-config.php';
 $custom_config_path = wp_normalize_path( $custom_config_path );
