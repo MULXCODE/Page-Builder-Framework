@@ -42,9 +42,6 @@ class Kirki_Modules_Custom_Sections {
 		// Register the new section types.
 		add_filter( 'kirki_section_types', array( $this, 'set_section_types' ) );
 
-		// Register the new panel types.
-		add_filter( 'kirki_panel_types', array( $this, 'set_panel_types' ) );
-
 		// Include the section-type files.
 		add_action( 'customize_register', array( $this, 'include_sections_and_panels' ) );
 
@@ -84,21 +81,6 @@ class Kirki_Modules_Custom_Sections {
 			'kirki-link'     => 'Kirki_Sections_Link_Section',
 		);
 		return array_merge( $section_types, $new_types );
-	}
-
-	/**
-	 * Add the custom panel types.
-	 *
-	 * @access public
-	 * @since 3.0.0
-	 * @param array $panel_types The registered section-types.
-	 * @return array
-	 */
-	public function set_panel_types( $panel_types ) {
-		$new_types = array(
-			'kirki-nested' => 'Kirki_Panels_Nested_Panel',
-		);
-		return array_merge( $panel_types, $new_types );
 	}
 
 	/**
