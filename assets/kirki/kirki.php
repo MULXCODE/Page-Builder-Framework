@@ -69,11 +69,8 @@ $kirki->modules = new Kirki_Modules();
 Kirki::$url = plugins_url( '', __FILE__ );
 
 // Instantiate classes.
-new Kirki();
+new kirki();
 new Kirki_L10n();
-
-// Include deprecated functions & methods.
-require_once wp_normalize_path( dirname( __FILE__ ) . '/deprecated/deprecated.php' ); // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude
 
 // Include the ariColor library.
 require_once wp_normalize_path( dirname( __FILE__ ) . '/lib/class-aricolor.php' ); // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude

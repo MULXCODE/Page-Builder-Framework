@@ -4980,4 +4980,4 @@ function wpbf_custom_default_fonts( $standard_fonts ) {
 	return $standard_fonts;
 
 }
-add_filter( 'kirki/fonts/standard_fonts', 'wpbf_custom_default_fonts', 0 );
+add_filter( 'kirki_fonts_standard_fonts', 'wpbf_custom_default_fonts', 0 );
