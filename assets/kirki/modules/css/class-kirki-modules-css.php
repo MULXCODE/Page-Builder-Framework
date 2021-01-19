@@ -274,17 +274,6 @@ class Kirki_Modules_CSS {
 	 * This is here for backwards-compatibility in case a theme was calling it directly.
 	 *
 	 * @static
-	 * @since 3.0.26
-	 * @access public
-	 * @return void
-	 */
-	public static function add_fontawesome_script() {}
-
-	/**
-	 * The FA field got deprecated in v3.0.42.
-	 * This is here for backwards-compatibility in case a theme was calling it directly.
-	 *
-	 * @static
 	 * @since 3.0.35
 	 * @access public
 	 * @return false
