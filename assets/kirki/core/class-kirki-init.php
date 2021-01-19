@@ -96,7 +96,6 @@ class Kirki_Init {
 			'kirki-color'           => 'Kirki_Control_Color',
 			'kirki-color-palette'   => 'Kirki_Control_Color_Palette',
 			'kirki-custom'          => 'Kirki_Control_Custom',
-			'kirki-date'            => 'Kirki_Control_Date',
 			'kirki-dimension'       => 'Kirki_Control_Dimension',
 			'kirki-dimensions'      => 'Kirki_Control_Dimensions',
 			'kirki-editor'          => 'Kirki_Control_Editor',
