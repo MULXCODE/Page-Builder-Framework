@@ -82,7 +82,6 @@ if ( _.isUndefined( window.kirkiSetSettingValue ) ) {
 				case 'kirki-radio-buttonset':
 				case 'kirki-radio-image':
 				case 'kirki-radio':
-				case 'kirki-dashicons':
 				case 'kirki-color-palette':
 				case 'kirki-palette':
 					jQuery( $this.findElement( setting, 'input[value="' + value + '"]' ) ).prop( 'checked', true );
@@ -1638,7 +1637,6 @@ _.each( kirki.control, function( obj, type ) {
 	wp.customize.controlConstructor[ type ] = wp.customize.kirkiDynamicControl.extend( {} );
 } );
 wp.customize.controlConstructor['kirki-color-palette'] = wp.customize.kirkiDynamicControl.extend( {} );
-wp.customize.controlConstructor['kirki-dashicons'] = wp.customize.kirkiDynamicControl.extend( {} );
 wp.customize.controlConstructor['kirki-date'] = wp.customize.kirkiDynamicControl.extend( {
 
 	initKirkiControl: function() {
