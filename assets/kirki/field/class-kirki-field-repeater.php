@@ -115,9 +115,6 @@ class Kirki_Field_Repeater extends Kirki_Field {
 								$subfield_value = esc_url_raw( $subfield_value );
 							}
 							break;
-						case 'dropdown-pages':
-							$subfield_value = (int) $subfield_value;
-							break;
 						case 'color':
 							if ( $subfield_value ) {
 								$color_obj      = ariColor::newColor( $subfield_value );

@@ -111,23 +111,6 @@ class Kirki_Control_Repeater extends Kirki_Control_Base {
 						// We add it to the list of fields that need some extra filtering/processing.
 						$media_fields_to_filter[ $key ] = true;
 						break;
-
-					case 'dropdown-pages':
-						// If the field is a dropdown-pages field then add it to args.
-						$dropdown = wp_dropdown_pages(
-							array(
-								'name'              => '',
-								'echo'              => 0,
-								'show_option_none'  => esc_html__( 'Select a Page', 'kirki' ),
-								'option_none_value' => '0',
-								'selected'          => '',
-							)
-						);
-
-						// Hackily add in the data link parameter.
-						$dropdown = str_replace( '<select', '<select data-field="' . esc_attr( $args['fields'][ $key ]['id'] ) . '"' . $this->get_link(), $dropdown ); // phpcs:ignore Generic.Formatting.MultipleStatementAlignment
-						$args['fields'][ $key ]['dropdown'] = $dropdown;
-						break;
 				}
 			}
 		}
@@ -309,14 +292,6 @@ class Kirki_Control_Repeater extends Kirki_Control_Base {
 											<option value="{{{ i }}}" <# if ( -1 !== jQuery.inArray( i, field.default ) || field.default == i ) { #> selected="selected" <# } #>>{{ choice }}</option>
 										<# }); #>
 									</select>
-								</label>
-
-							<# } else if ( 'dropdown-pages' === field.type ) { #>
-
-								<label>
-									<# if ( field.label ) { #><span class="customize-control-title">{{{ data.label }}}</span><# } #>
-									<# if ( field.description ) { #><span class="description customize-control-description">{{{ field.description }}}</span><# } #>
-									<div class="customize-control-content repeater-dropdown-pages">{{{ field.dropdown }}}</div>
 								</label>
 
 							<# } else if ( 'radio' === field.type ) { #>
