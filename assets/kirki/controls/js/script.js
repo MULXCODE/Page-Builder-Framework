@@ -2049,13 +2049,13 @@ wp.customize.controlConstructor.repeater = wp.customize.Control.extend( {
 			}
 		} );
 
-		this.container.on( 'click keypress', '.repeater-field-image .upload-button,.repeater-field-cropped_image .upload-button,.repeater-field-upload .upload-button', function( e ) {
+		this.container.on( 'click keypress', '.repeater-field-image .upload-button,.repeater-field-upload .upload-button', function( e ) {
 			e.preventDefault();
 			control.$thisButton = jQuery( this );
 			control.openFrame( e );
 		} );
 
-		this.container.on( 'click keypress', '.repeater-field-image .remove-button,.repeater-field-cropped_image .remove-button', function( e ) {
+		this.container.on( 'click keypress', '.repeater-field-image .remove-button', function( e ) {
 			e.preventDefault();
 			control.$thisButton = jQuery( this );
 			control.removeImage( e );
@@ -2415,7 +2415,7 @@ wp.customize.controlConstructor.repeater = wp.customize.Control.extend( {
 			return;
 		}
 
-		$targetDiv = this.$thisButton.closest( '.repeater-field-image,.repeater-field-cropped_image,.repeater-field-upload' );
+		$targetDiv = this.$thisButton.closest( '.repeater-field-image,.repeater-field-upload' );
 		$uploadButton = $targetDiv.find( '.upload-button' );
 
 		$targetDiv.find( '.kirki-image-attachment' ).slideUp( 'fast', function() {
