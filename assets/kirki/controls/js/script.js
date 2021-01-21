@@ -2124,12 +2124,7 @@ wp.customize.controlConstructor.repeater = wp.customize.Control.extend( {
 		if ( wp.customize.utils.isKeydownButNotEnterEvent( event ) ) {
 			return;
 		}
-
-		if ( this.$thisButton.closest( '.repeater-field' ).hasClass( 'repeater-field-cropped_image' ) ) {
-			this.initCropperFrame();
-		} else {
 			this.initFrame();
-		}
 
 		this.frame.open();
 	},
@@ -2166,25 +2161,6 @@ wp.customize.controlConstructor.repeater = wp.customize.Control.extend( {
 		var currentFieldId = this.$thisButton.siblings( 'input.hidden-field' ).attr( 'data-field' ),
 			attrs          = [ 'width', 'height', 'flex_width', 'flex_height' ], // A list of attributes to look for
 			libMediaType   = this.getMimeType();
-
-		// Make sure we got it
-		if ( _.isString( currentFieldId ) && '' !== currentFieldId ) {
-
-			// Make fields is defined and only do the hack for cropped_image
-			if ( _.isObject( this.params.fields[ currentFieldId ] ) && 'cropped_image' === this.params.fields[ currentFieldId ].type ) {
-
-				//Iterate over the list of attributes
-				attrs.forEach( function( el ) {
-
-					// If the attribute exists in the field
-					if ( ! _.isUndefined( this.params.fields[ currentFieldId ][ el ] ) ) {
-
-						// Set the attribute in the main object
-						this.params[ el ] = this.params.fields[ currentFieldId ][ el ];
-					}
-				}.bind( this ) );
-			}
-		}
 
 		this.frame = wp.media( {
 			button: {
@@ -2365,7 +2341,7 @@ wp.customize.controlConstructor.repeater = wp.customize.Control.extend( {
 
 		'use strict';
 
-		var $targetDiv = this.$thisButton.closest( '.repeater-field-image,.repeater-field-cropped_image' );
+		var $targetDiv = this.$thisButton.closest( '.repeater-field-image' );
 
 		$targetDiv.find( '.kirki-image-attachment' ).html( '<img src="' + attachment.url + '">' ).hide().slideDown( 'slow' );
 
@@ -2508,7 +2484,7 @@ wp.customize.controlConstructor.repeater = wp.customize.Control.extend( {
 
 		if ( filtering ) {
 			jQuery.each( this.params.fields, function( index, value ) {
-				if ( 'image' === value.type || 'cropped_image' === value.type || 'upload' === value.type ) {
+				if ( 'image' === value.type || 'upload' === value.type ) {
 					filter.push( index );
 				}
 			} );

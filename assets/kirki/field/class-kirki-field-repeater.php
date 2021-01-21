@@ -109,7 +109,6 @@ class Kirki_Field_Repeater extends Kirki_Field {
 
 					switch ( $subfield_type ) {
 						case 'image':
-						case 'cropped_image':
 						case 'upload':
 							if ( ! is_numeric( $subfield_value ) && is_string( $subfield_value ) ) {
 								$subfield_value = esc_url_raw( $subfield_value );
