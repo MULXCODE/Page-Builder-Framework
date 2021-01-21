@@ -37,7 +37,6 @@ if ( _.isUndefined( window.kirkiSetSettingValue ) ) {
 					break;
 
 				case 'checkbox':
-				case 'kirki-switch':
 				case 'kirki-toggle':
 					value = ( 1 === value || '1' === value || true === value ) ? true : false;
 					jQuery( $this.findElement( setting, 'input' ) ).prop( 'checked', value );
@@ -2892,22 +2891,6 @@ wp.customize.controlConstructor['kirki-sortable'] = wp.customize.Control.extend(
 			}
 		} );
 		return newVal;
-	}
-} );
-wp.customize.controlConstructor['kirki-switch'] = wp.customize.kirkiDynamicControl.extend( {
-
-	initKirkiControl: function() {
-
-		'use strict';
-
-		var control       = this,
-			checkboxValue = control.setting._value;
-
-		// Save the value
-		this.container.on( 'change', 'input', function() {
-			checkboxValue = ( jQuery( this ).is( ':checked' ) ) ? true : false;
-			control.setting.set( checkboxValue );
-		} );
 	}
 } );
 wp.customize.controlConstructor['kirki-toggle'] = wp.customize.kirkiDynamicControl.extend( {

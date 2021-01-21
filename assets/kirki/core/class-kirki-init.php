@@ -96,7 +96,6 @@ class Kirki_Init {
 			'kirki-slider'          => 'Kirki_Control_Slider',
 			'kirki-sortable'        => 'Kirki_Control_Sortable',
 			'kirki-spacing'         => 'Kirki_Control_Dimensions',
-			'kirki-switch'          => 'Kirki_Control_Switch',
 			'kirki-generic'         => 'Kirki_Control_Generic',
 			'kirki-toggle'          => 'Kirki_Control_Toggle',
 			'kirki-typography'      => 'Kirki_Control_Typography',
