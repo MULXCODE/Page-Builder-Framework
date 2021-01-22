@@ -136,7 +136,7 @@ class Kirki_Output {
 			$option_name = Kirki::get_config_param( $this->config_id, 'option_name' );
 			$options     = array();
 			if ( $option_name ) {
-				$options = ( 'site_option' === $option_type ) ? get_site_option( $option_name ) : get_option( $option_name );
+				$options = get_option( $option_name );
 			}
 			foreach ( $output['pattern_replace'] as $search => $replace ) {
 				$replacement = '';
@@ -152,15 +152,6 @@ class Kirki_Output {
 							break;
 						}
 						$replacement = get_option( $replace );
-						break;
-					case 'site_option':
-						$replacement = ( is_array( $options ) && isset( $options[ $replace ] ) ) ? $options[ $replace ] : get_site_option( $replace );
-						break;
-					case 'user_meta':
-						$user_id = get_current_user_id();
-						if ( $user_id ) {
-							$replacement = get_user_meta( $user_id, $replace, true );
-						}
 						break;
 					default:
 						$replacement = get_theme_mod( $replace );
