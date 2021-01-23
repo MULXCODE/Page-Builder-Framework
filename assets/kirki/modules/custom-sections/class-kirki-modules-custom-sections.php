@@ -73,10 +73,7 @@ class Kirki_Modules_Custom_Sections {
 	 */
 	public function set_section_types( $section_types ) {
 		$new_types = array(
-			'kirki-default'  => 'Kirki_Sections_Default_Section',
 			'kirki-expanded' => 'Kirki_Sections_Expanded_Section',
-			'kirki-nested'   => 'Kirki_Sections_Nested_Section',
-			'kirki-link'     => 'Kirki_Sections_Link_Section',
 		);
 		return array_merge( $section_types, $new_types );
 	}
