@@ -50,15 +50,6 @@ class Kirki_Modules_Gutenberg {
 	public $enabled;
 
 	/**
-	 * CSS Module reference.
-	 *
-	 * @access public
-	 * @since 3.0.35
-	 * @var object $modules_css
-	 */
-	private $modules_css;
-
-	/**
 	 * Webfonts Module reference.
 	 *
 	 * @access public
@@ -96,7 +87,6 @@ class Kirki_Modules_Gutenberg {
 	public function init() {
 		$this->set_configs();
 		$this->set_enabled();
-		$this->set_modules_css();
 		$this->set_google_fonts();
 		$this->set_modules_webfonts();
 		$this->add_hooks();
@@ -127,7 +117,6 @@ class Kirki_Modules_Gutenberg {
 	protected function add_hooks() {
 		if ( ! $this->is_disabled() ) {
 			add_action( 'after_setup_theme', array( $this, 'add_theme_support' ), 999 );
-			add_filter( 'block_editor_settings', array( $this, 'enqueue' ) );
 		}
 	}
 
@@ -144,53 +133,6 @@ class Kirki_Modules_Gutenberg {
 		if ( true !== get_theme_support( 'editor-styles' ) ) {
 			add_theme_support( 'editor-styles' );
 		}
-	}
-
-	/**
-	 * Enqueue styles to Gutenberg Editor.
-	 *
-	 * @access public
-	 * @param array $settings The settings for styles.
-	 * @since 3.0.35
-	 */
-	public function enqueue( $settings ) {
-		$styles = $this->get_styles();
-
-		if ( ! empty( $styles ) ) {
-			$settings['styles'][] = array( 'css' => $styles );
-		}
-
-		return $settings;
-	}
-
-	/**
-	 * Gets the styles to add to Gutenberg Editor.
-	 *
-	 * @access public
-	 * @since 3.0.35
-	 *
-	 * @return string $styles String containing inline styles to add to Gutenberg.
-	 */
-	public function get_styles() {
-
-		$styles = null;
-
-		foreach ( $this->configs as $config_id => $args ) {
-
-			if ( true === $this->is_disabled( $args ) ) {
-				continue;
-			}
-
-			$modules_css = $this->modules_css;
-			$styles      = $modules_css::loop_controls( $config_id ); // phpcs:ignore PHPCompatibility.Syntax.NewDynamicAccessToStatic
-			$styles      = apply_filters( "kirki_gutenberg_{$config_id}_dynamic_css", $styles );
-
-			if ( empty( $styles ) ) {
-				continue;
-			}
-		}
-
-		return $styles;
 	}
 
 	/**
@@ -242,16 +184,6 @@ class Kirki_Modules_Gutenberg {
 	 */
 	private function set_enabled() {
 		$this->enabled = ! $this->is_disabled();
-	}
-
-	/**
-	 * Set class property for $modules_css.
-	 *
-	 * @access private
-	 * @since 3.0.35
-	 */
-	private function set_modules_css() {
-		$this->modules_css = Kirki_Modules_CSS::get_instance();
 	}
 
 	/**
