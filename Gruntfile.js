@@ -31,20 +31,6 @@ module.exports = function( grunt ) {
 			}
 		},
 
-		// Check JS syntax
-		jscs: {
-			src: [
-				'Gruntfile.js',
-				'assets/kirki/controls/**/*.js',
-				'assets/kirki/modules/**/*.js',
-				'!assets/kirki/assets/vendor/*'
-			],
-			options: {
-				config: '.jscsrc',
-				verbose: true
-			}
-		},
-
 		// Watch task (run with "grunt watch")
 		watch: {
 			css: {
@@ -128,9 +114,7 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
 	grunt.loadNpmTasks( 'grunt-contrib-watch' );
 	grunt.loadNpmTasks( 'grunt-http' );
-	grunt.loadNpmTasks( 'grunt-jscs' );
 
-	grunt.registerTask( 'dev', [ 'sass', 'jscs', 'watch' ] );
 	grunt.registerTask( 'googlefontsProcess', function() {
 		var alphaFonts,
 			popularityFonts,
