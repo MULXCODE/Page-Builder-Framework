@@ -18,13 +18,12 @@
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.2",
     "grunt": "^1.1.0",
-    "grunt-contrib-clean": "*",
+    "grunt-contrib-clean": "*", // do we need this?
     "grunt-contrib-concat": "*",
     "grunt-contrib-sass": "*",
     "grunt-contrib-uglify": "*",
     "grunt-contrib-watch": "*",
-    "grunt-curl": "*",
+    "grunt-curl": "*", // do we need this?
     "grunt-http": "*",
-    "grunt-jscs": "*"
   }
 }
