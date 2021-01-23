@@ -3,8 +3,8 @@
 	"fileExtensions": [ ".js" ],
 	"excludeFiles": [
 		"**.min.js",
-		"assets/js/vendor/*",
-		"assets/js/vendor/**","assets/js/vendor",
-		"controls/js/*.js"
+		"assets/kirki/assets/js/vendor/*",
+		"assets/kirki/assets/js/vendor/**","assets/js/vendor",
+		"assets/kirki/controls/js/*.js"
 	]
 }
