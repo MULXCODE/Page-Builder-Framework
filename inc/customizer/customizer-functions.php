@@ -159,16 +159,6 @@ function wpbf_customizer_preview_css() {
 add_action( 'wp_head', 'wpbf_customizer_preview_css', 999 );
 
 /**
- * Post message.
- */
-function wpbf_customizer_preview_js() {
-
-	wp_enqueue_script( 'wpbf-postmessage', get_template_directory_uri() . '/inc/customizer/js/postmessage.js', array( 'jquery', 'customize-preview' ), WPBF_VERSION, true );
-
-}
-add_action( 'customize_preview_init', 'wpbf_customizer_preview_js' );
-
-/**
  * Enqueue customizer scripts & styles.
  */
 function wpbf_customizer_scripts_styles() {
