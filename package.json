@@ -16,6 +16,15 @@
     "gulp-plumber": "^1.2.0",
     "gulp-concat": "^2.6.1",
     "gulp-sass": "^4.0.2",
-    "gulp-uglify": "^3.0.2"
+    "gulp-uglify": "^3.0.2",
+    "grunt": "^1.1.0",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-sass": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-curl": "*",
+    "grunt-http": "*",
+    "grunt-jscs": "*"
   }
 }
