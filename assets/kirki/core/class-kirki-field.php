@@ -60,14 +60,6 @@ class Kirki_Field {
 	protected $input_attrs = array();
 
 	/**
-	 * Preset choices.
-	 *
-	 * @access protected
-	 * @var array
-	 */
-	protected $preset = array();
-
-	/**
 	 * CSS Variables.
 	 *
 	 * @access protected
