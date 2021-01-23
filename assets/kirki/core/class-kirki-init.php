@@ -87,7 +87,6 @@ class Kirki_Init {
 			'kirki-dimensions'      => 'Kirki_Control_Dimensions',
 			'kirki-editor'          => 'Kirki_Control_Editor',
 			'kirki-image'           => 'Kirki_Control_Image',
-			'kirki-multicolor'      => 'Kirki_Control_Multicolor',
 			'kirki-number'          => 'Kirki_Control_Number',
 			'kirki-palette'         => 'Kirki_Control_Palette',
 			'kirki-radio'           => 'Kirki_Control_Radio',

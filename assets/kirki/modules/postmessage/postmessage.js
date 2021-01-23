@@ -175,7 +175,6 @@ var kirkiPostMessage = {
 					}
 					break;
 				case 'kirki-dimensions':
-				case 'kirki-multicolor':
 				case 'kirki-sortable':
 					styles += output.element + '{';
 					_.each( value, function( val, key ) {

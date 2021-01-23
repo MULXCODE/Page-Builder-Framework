@@ -64,12 +64,6 @@ if ( _.isUndefined( window.kirkiSetSettingValue ) ) {
 					$this.setColorPicker( $this.findElement( setting, '.kirki-color-control' ), value );
 					break;
 
-				case 'kirki-multicolor':
-					_.each( value, function( subVal, index ) {
-						$this.setColorPicker( $this.findElement( setting, '.multicolor-index-' + index ), subVal );
-					} );
-					break;
-
 				case 'kirki-radio-buttonset':
 				case 'kirki-radio-image':
 				case 'kirki-radio':
