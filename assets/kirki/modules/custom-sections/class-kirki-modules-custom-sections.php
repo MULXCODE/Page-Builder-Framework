@@ -38,10 +38,8 @@ class Kirki_Modules_Custom_Sections {
 	 * @since 3.0.0
 	 */
 	protected function __construct() {
-
 		// Register the new section types.
 		add_filter( 'kirki_section_types', array( $this, 'set_section_types' ) );
-
 		// Include the section-type files.
 		add_action( 'customize_register', array( $this, 'include_sections_and_panels' ) );
 

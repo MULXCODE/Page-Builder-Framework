@@ -61,7 +61,6 @@ class Kirki_Modules {
 				'css'                => 'Kirki_Modules_CSS',
 				'css-vars'           => 'Kirki_Modules_CSS_Vars',
 				'icons'              => 'Kirki_Modules_Icons',
-				'loading'            => 'Kirki_Modules_Loading',
 				'tooltips'           => 'Kirki_Modules_Tooltips',
 				'postMessage'        => 'Kirki_Modules_PostMessage',
 				'selective-refresh'  => 'Kirki_Modules_Selective_Refresh',
