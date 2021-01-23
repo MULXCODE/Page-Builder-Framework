@@ -43,7 +43,7 @@ module.exports = function( grunt ) {
 			},
 			scripts: {
 				files: [
-					'Gruntfile.js',
+					'gruntfile.js',
 					'assets/kirki/controls/js/src/*.js',
 					'assets/kirki/modules/**/*.js'
 				],
