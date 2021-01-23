@@ -64,15 +64,6 @@ if ( _.isUndefined( window.kirkiSetSettingValue ) ) {
 					$this.setColorPicker( $this.findElement( setting, '.kirki-color-control' ), value );
 					break;
 
-				case 'kirki-multicheck':
-					$this.findElement( setting, 'input' ).each( function() {
-						jQuery( this ).prop( 'checked', false );
-					} );
-					_.each( value, function( subValue, i ) {
-						jQuery( $this.findElement( setting, 'input[value="' + value[ i ] + '"]' ) ).prop( 'checked', true );
-					} );
-					break;
-
 				case 'kirki-multicolor':
 					_.each( value, function( subVal, index ) {
 						$this.setColorPicker( $this.findElement( setting, '.multicolor-index-' + index ), subVal );
