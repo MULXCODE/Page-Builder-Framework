@@ -68,7 +68,6 @@ if ( _.isUndefined( window.kirkiSetSettingValue ) ) {
 				case 'kirki-radio-image':
 				case 'kirki-radio':
 				case 'kirki-color-palette':
-				case 'kirki-palette':
 					jQuery( $this.findElement( setting, 'input[value="' + value + '"]' ) ).prop( 'checked', true );
 					break;
 
