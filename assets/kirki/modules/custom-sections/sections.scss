@@ -8,7 +8,6 @@
       display: none;
     }
   }
-
   .customize-pane-child {
     &.control-section-kirki-expanded {
       position: relative;
@@ -23,19 +22,4 @@
       }
     }
   }
-
-  .control-section-kirki-link {
-    .button {
-      margin-top: -3px;
-    }
-  }
-}
-
-#customize-theme-controls .customize-pane-child.current-section-parent,
-.in-sub-panel #customize-theme-controls .customize-pane-child.current-panel-parent {
-  transform: translateX(-100%);
-}
-
-.control-section-kirki-nested {
-  margin: 0 -12px;
 }
