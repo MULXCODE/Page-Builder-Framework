@@ -82,20 +82,3 @@ Kirki::add_config( 'wpbf', array(
     'gutenberg_support' => true,
     'disable_output'    => true,
 ) );
-
-$custom_config_path = dirname( __FILE__ ) . '/custom-config.php';
-$custom_config_path = wp_normalize_path( $custom_config_path );
-if ( file_exists( $custom_config_path ) ) {
-	require_once $custom_config_path; // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude
-}
-
-/**
- * To enable tests, add this line to your wp-config.php file (or anywhere alse):
- * define( 'KIRKI_TEST', true );
- *
- * Please note that the example.php file is not included in the wordpress.org distribution
- * and will only be included in dev versions of the plugin in the github repository.
- */
-if ( defined( 'KIRKI_TEST' ) && true === KIRKI_TEST && file_exists( dirname( __FILE__ ) . '/example.php' ) ) {
-	include_once dirname( __FILE__ ) . '/example.php'; // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude
-}
