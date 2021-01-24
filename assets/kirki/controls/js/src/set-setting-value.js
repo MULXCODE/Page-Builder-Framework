@@ -32,29 +32,11 @@ if ( _.isUndefined( window.kirkiSetSettingValue ) ) {
 			// Process visually changing the value based on the control type.
 			switch ( subControl.type ) {
 
-				case 'kirki-background':
-					if ( ! _.isUndefined( value['background-color'] ) ) {
-						$this.setColorPicker( $this.findElement( setting, '.kirki-color-control' ), value['background-color'] );
-					}
-					$this.findElement( setting, '.placeholder, .thumbnail' ).removeClass().addClass( 'placeholder' ).html( 'No file selected' );
-					_.each( [ 'background-repeat', 'background-position' ], function( subVal ) {
-						if ( ! _.isUndefined( value[ subVal ] ) ) {
-							$this.setSelectWoo( $this.findElement( setting, '.' + subVal + ' select' ), value[ subVal ] );
-						}
-					} );
-					_.each( [ 'background-size', 'background-attachment' ], function( subVal ) {
-						jQuery( $this.findElement( setting, '.' + subVal + ' input[value="' + value + '"]' ) ).prop( 'checked', true );
-					} );
-					valueJSON = JSON.stringify( value ).replace( /'/g, '&#39' );
-					jQuery( $this.findElement( setting, '.background-hidden-value' ).attr( 'value', valueJSON ) ).trigger( 'change' );
-					break;
-
 				case 'kirki-code':
 					jQuery( $this.findElement( setting, '.CodeMirror' ) )[0].CodeMirror.setValue( value );
 					break;
 
 				case 'checkbox':
-				case 'kirki-switch':
 				case 'kirki-toggle':
 					value = ( 1 === value || '1' === value || true === value ) ? true : false;
 					jQuery( $this.findElement( setting, 'input' ) ).prop( 'checked', value );
@@ -81,27 +63,9 @@ if ( _.isUndefined( window.kirkiSetSettingValue ) ) {
 					$this.setColorPicker( $this.findElement( setting, '.kirki-color-control' ), value );
 					break;
 
-				case 'kirki-multicheck':
-					$this.findElement( setting, 'input' ).each( function() {
-						jQuery( this ).prop( 'checked', false );
-					} );
-					_.each( value, function( subValue, i ) {
-						jQuery( $this.findElement( setting, 'input[value="' + value[ i ] + '"]' ) ).prop( 'checked', true );
-					} );
-					break;
-
-				case 'kirki-multicolor':
-					_.each( value, function( subVal, index ) {
-						$this.setColorPicker( $this.findElement( setting, '.multicolor-index-' + index ), subVal );
-					} );
-					break;
-
 				case 'kirki-radio-buttonset':
 				case 'kirki-radio-image':
 				case 'kirki-radio':
-				case 'kirki-dashicons':
-				case 'kirki-color-palette':
-				case 'kirki-palette':
 					jQuery( $this.findElement( setting, 'input[value="' + value + '"]' ) ).prop( 'checked', true );
 					break;
 
@@ -122,12 +86,6 @@ if ( _.isUndefined( window.kirkiSetSettingValue ) ) {
 					}
 					valueJSON = JSON.stringify( value ).replace( /'/g, '&#39' );
 					jQuery( $this.findElement( setting, '.typography-hidden-value' ).attr( 'value', valueJSON ) ).trigger( 'change' );
-					break;
-
-				case 'kirki-dimensions':
-					_.each( value, function( subValue, id ) {
-						jQuery( $this.findElement( setting, '.' + id + ' input' ) ).prop( 'value', subValue );
-					} );
 					break;
 
 				case 'kirki-repeater':
